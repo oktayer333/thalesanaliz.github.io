@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günün Kuponları</title>
+    <style>
+        body {
+            background: #0e1a35;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: #1b2c56;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #00000050;
+        }
+        .btn {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 25px;
+        }
+        .countdown {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+            background: #22376d;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .info-box {
+            background: #2c3f75;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .info-box-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #00fff2;
+        }
+        h1 {
+            font-size: 24px;
+            color: #ffffff;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #00ffe0;
+        }
+        p {
+            color: #b0c4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" width="80">
+        <h1>GÜNÜN EN NET MAÇLARIYLA HİZMETİNİZDEYİZ.</h1>
+        <h2>KAYBETTİĞİN ZAMANINI GERİ SATIN AL</h2>
+        <a href="https://t.me/+atjI1qavEzk0M2Y0" class="btn">Şimdi Telegram Kanalına Katıl</a>
+
+        <p>Kalan kupon sayısı:</p>
+        <div class="countdown" id="counter">072</div>
+
+        <div class="info-box">
+            <div class="info-box-icon">⬇️</div>
+            <h2>%100 Ücretsiz</h2>
+            <p>Tamamen ücretsiz kuponlar ve indirimler</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-icon">🕒</div>
+            <h2>Sınırlı Süre</h2>
+            <p>Bu fırsatı kaçırmayın, zaman daralıyor!</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-icon">⚠️</div>
+            <h2>Özel Fırsatlar</h2>
+            <p>Sadece kanal üyelerine özel teklifler</p>
+        </div>
+
+        <a href="https://t.me/+atjI1qavEzk0M2Y0" class="btn">Şimdi Telegram Kanalına Katıl</a>
+    </div>
+
+    <script>
+        let count = 72;
+        const end = 23;
+        const el = document.getElementById("counter");
+        const interval = Math.floor((60 * 60 * (20 - new Date().getHours())) / (count - end)) * 1000;
+
+        const timer = setInterval(() => {
+            if (count > end) {
+                count--;
+                el.textContent = count.toString().padStart(3, '0');
+            } else {
+                clearInterval(timer);
+            }
+        }, interval);
+
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
+        if (isMobile()) {
+            setTimeout(function(){
+                window.location.href = "https://t.me/+atjI1qavEzk0M2Y0";
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
